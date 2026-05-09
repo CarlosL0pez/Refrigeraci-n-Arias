@@ -5,6 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Refrigeración Arias</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/brite/bootstrap.min.css" rel="stylesheet">
@@ -13,97 +14,156 @@
 
         body {
 
-          background: linear-gradient(
-            to bottom,
-            #000000 0%,
-            #000000 28%,
-            #0b0b0b 35%,
-            #1a1a1a 45%,
-            #2b2b2b 55%,
-            #1a1a1a 75%,
-            #000000 100%
-            );
+
+                background:
+                linear-gradient(
+                    to bottom,
+                    #000000 0%,
+                    #050505 20%,
+                    #111111 40%,
+                    #1a1a1a 55%,
+                    #101010 75%,
+                    #000000 100%
+                ),
+
+                url("snowflakes.jpg");
+
+                background-size: cover;
+
+                background-repeat: repeat;
+
+                background-attachment: fixed;
+
+                background-blend-mode: soft-light;
+            
+
+            background-attachment: fixed;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
             min-height: 100vh;
+
             gap: 40px;
+
             padding-top: 40px;
+
             margin: 0;
         }
 
         .top-bar {
 
             display: flex;
+
             align-items: center;
+
             gap: 20px;
         }
 
         .logo {
 
             width: 200px;
+
             height: auto;
+
             object-fit: contain;
+
             transition: 0.3s ease;
+
+            border-radius: 25px;
+
+            padding: 10px;
+
+            background: radial-gradient(
+                circle,
+                rgba(20,20,20,0.9) 0%,
+                rgba(10,10,10,0.7) 60%,
+                transparent 100%
+            );
+
+            box-shadow:
+            0 0 25px rgba(0,0,0,0.7),
+            0 0 40px rgba(255,255,255,0.04);
         }
 
         .logo:hover {
 
-            transform: translateY(-10px);
-            filter: drop-shadow(0 0 15px rgba(102, 194, 255, 0.6));
+            transform: translateY(-10px) scale(1.03);
+
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.10));
         }
 
         button {
 
             outline: none;
+
             cursor: pointer;
+
             border: none;
+
             padding: 0.9rem 2rem;
+
             margin: 0;
+
             font-family: inherit;
+
             position: relative;
+
             display: inline-block;
+
             letter-spacing: 0.05rem;
-            font-weight: 600;
+
+            font-weight: 700;
+
             font-size: 17px;
+
             border-radius: 500px;
+
             overflow: hidden;
+
             background: #66c2ff;
-            color: ghostwhite;
+
+            color: rgb(251, 251, 252);
         }
 
         button span {
 
             position: relative;
+
             z-index: 10;
+
             transition: color 0.4s;
         }
 
         button:hover span {
 
-            color: black;
-        }
-
-        button::before,
-        button::after {
-
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+            color: white;
         }
 
         button::before {
 
             content: "";
-            background: #050505;
-            width: 120%;
+
+            position: absolute;
+
+            top: 0;
+
             left: -10%;
+
+            width: 120%;
+
+            height: 100%;
+
+            background: #4e5466;
+
             transform: skew(30deg);
+
             transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+
+            z-index: 0;
         }
 
         button:hover::before {
@@ -114,42 +174,64 @@
         .services-section {
 
             width: 100%;
+
             padding: 80px 0;
+
             display: flex;
+
             justify-content: center;
         }
 
         .cards-container {
 
             display: flex;
+
             justify-content: center;
-            gap: 400px;
+
+            gap: 200px;
+
             flex-wrap: wrap;
         }
 
         .card {
 
             width: 300px;
+
             background: rgb(65, 63, 63);
+
             padding: .4em;
+
             border-radius: 10px;
+
             height: 300px;
+
             transition: 0.4s;
+
             position: relative;
+
             overflow: hidden;
+
             z-index: 1;
         }
 
         .card::before {
 
             content: "";
+
             position: absolute;
+
             left: 0;
+
             bottom: -100%;
+
             width: 100%;
+
             height: 100%;
+
             background: #66c2ff;
+
             transition: 0.5s ease;
+
             z-index: -1;
         }
 
@@ -160,30 +242,39 @@
 
         .card:hover {
 
-            box-shadow: 0 15px 30px rgba(102, 194, 255, 0.4);
+            box-shadow: 0 15px 30px rgba(102, 194, 255, 0.18);
         }
 
         .card-image {
 
             background-color: rgb(223, 218, 218);
+
             width: 100%;
+
             height: 200px;
+
             border-radius: 6px 6px 0 0;
         }
 
         .category {
 
             text-transform: uppercase;
+
             font-size: 0.7em;
+
             font-weight: 600;
+
             color: rgb(242, 243, 247);
+
             padding: 10px 7px 0;
         }
 
         .heading {
 
             font-weight: 600;
+
             color: rgb(219, 219, 219);
+
             padding: 7px;
         }
 
@@ -193,114 +284,119 @@
             color: white;
         }
 
-        .input__container {
-
-            background: #f0f0f0;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 200px;
-            border: 4px solid #000;
-            transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
-            transform-style: preserve-3d;
-            transform: rotateX(10deg) rotateY(-10deg);
-            perspective: 1000px;
-            box-shadow: 10px 10px 0 #000;
-            position: absolute;
-            left: 60px;
-            top: 120px;
-        }
-
-        .input__container:hover {
-
-            transform: rotateX(5deg) rotateY(1deg) scale(1.05);
-            box-shadow: 25px 25px 0 -5px #66c2ff, 25px 25px 0 0 #000;
-        }
-
-        .input__container::before {
-
-            content: "IMPORTANTE!!";
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: rgb(117, 145, 161);
-            color: #000;
-            font-weight: bold;
-            padding: 5px 10px;
-            font-size: 14px;
-            transform: translateZ(50px);
-            z-index: 4;
-            border: 2px solid #000;
-        }
-
-        .info-text {
-
-            margin: 0;
-            color: #000;
-            font-weight: bold;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        h2 {
-
-            color: white;
-            margin-top: 120px;
-            font-size: 2.5rem;
-            text-align: center;
-        }
-
-        .weAre {
-
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            margin-top: 60px;
-            margin-bottom: 100px;
-        }
-
         .why-card {
 
             width: 220px;
+
             height: 280px;
-            background-image: linear-gradient(
-                163deg,
-                #66c2ff 0%,
-                #1e3a8a 100%
-            );
+
+            background: transparent;
 
             border-radius: 20px;
+
             transition: all .3s;
         }
 
         .why-card2 {
 
             width: 100%;
+
             height: 100%;
+
             box-sizing: border-box;
-            background-color: #1a1a1a;
+
+            background: linear-gradient(
+                to bottom,
+                #312f2f,
+                #222121
+            );
+
             border-radius: 20px;
+
             transition: all .2s;
+
             padding: 20px;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             color: white;
+
+            border: 1px solid rgba(0, 0, 0, 0.651);
         }
 
         .why-card2:hover {
 
             transform: scale(0.98);
+
             border-radius: 20px;
         }
 
         .why-card:hover {
 
-            box-shadow: 0px 0px 30px 1px rgba(102, 194, 255, 0.4);
+            box-shadow:
+            0px 0px 12px rgba(8, 117, 190, 0.582);
+
+            transform: translateY(-6px);
+        }
+
+        .why-card2 h3 {
+
+            font-size: 1.7rem;
+
+            margin-bottom: 20px;
+        }
+
+        .why-card2 p {
+
+            font-size: 1rem;
+
+            line-height: 1.6;
+
+            color: #d6d6d6;
+        }
+
+        .why-title-card {
+
+            width: 500px;
+
+            height: 120px;
+
+            margin-top: 100px;
+        }
+
+        .why-title-card2 {
+
+            padding: 20px;
+        }
+
+        .why-title-card2 h3 {
+
+            font-size: 2rem;
+
+            margin: 0;
+        }
+
+        .weAre {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 100px;
+
+            flex-wrap: wrap;
+
+            margin-top: 60px;
+
+            margin-bottom: 100px;
         }
 
     </style>
@@ -315,15 +411,11 @@
 
     </div>
 
-    <div class="input__container">
+    <button>
 
-        <p class="info-text">
-            En caso de querer cotizar un precio para su caso específico contáctenos.
-        </p>
+        <span>Contáctenos</span>
 
-    </div>
-
-    
+    </button>
 
     <div class="services-section">
 
@@ -374,13 +466,16 @@
         </div>
 
     </div>
-    <button>
-        <span>Contáctenos</span>
-    </button>
 
-    <h2>
-        ¿Por qué elegir Refrigeración Arias?
-    </h2>
+    <div class="why-card why-title-card">
+
+        <div class="why-card2 why-title-card2">
+
+            <h3>¿Por qué elegir Refrigeración Arias?</h3>
+
+        </div>
+
+    </div>
 
     <div class="weAre">
 
@@ -425,12 +520,8 @@
             </div>
 
         </div>
-        
 
     </div>
-    
-    
-
 
 </body>
 
